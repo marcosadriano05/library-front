@@ -1,0 +1,28 @@
+<form #bookForm="ngForm" (ngSubmit)="formSubmit()" class="container-sm card p-0">
+  <div class="card-header">
+    Register a book
+  </div>
+  <div class="card-body">
+    <div class="mb-3 form-floating">
+      <input id="title" type="text" class="form-control" [(ngModel)]="book.title" name="title" placeholder="Book Title" />
+      <label for="title" class="form-label">Title</label>
+    </div>
+  
+    <div class="mb-3 form-floating">
+      <input id="publisher" type="text" class="form-control" [(ngModel)]="book.publisher" name="publisher" placeholder="Book publisher" />
+      <label for="publisher" class="form-label">Publisher</label>
+    </div>
+  
+    <div class="mb-3 form-floating">
+      <input id="photo" type="text" class="form-control" [(ngModel)]="book.photo" name="photo" placeholder="Book Photo" />
+      <label for="photo" class="form-label">Photo</label>
+    </div>
+  
+    <div class="mb-3 form-floating">
+      <input id="authors" type="text" class="form-control" [(ngModel)]="book.authors" name="authors" placeholder="Book Authors" />
+      <label for="authors" class="form-label">Authors</label>
+    </div>
+  
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
