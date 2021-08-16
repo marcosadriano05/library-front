@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-type Book = {
-  title: string;
-  publisher: string;
-  photo: string;
-  authors: string;
-};
+import { Book } from '../../models/book';
+import { BookService } from '../../services/book.service';
 
 @Component({
   selector: 'app-register-book',
@@ -14,23 +10,23 @@ type Book = {
 })
 export class RegisterBookComponent implements OnInit {
 
-  book: Book = {
+  public book: Book = {
     title: '',
     publisher: '',
-    authors: '',
+    authors: [],
     photo: ''
   };
 
-  constructor() { }
+  public authors: string = '';
+
+  constructor(private bookService: BookService) { }
 
   ngOnInit(): void {
   }
 
   formSubmit() {
-    console.log(this.book.title);
-    console.log(this.book.publisher);
-    console.log(this.book.photo);
-    console.log(this.book.authors);
+    this.book.authors = this.authors.split(',').map(author => author.trim());
+    this.bookService.postBook(this.book).subscribe(book => console.log('Adicionado'));
   }
 
 }
