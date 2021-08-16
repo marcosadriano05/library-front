@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
+  public title: string = 'LOTR';
+  public publisher: string = 'Publisher';
+  public authors: string = 'Authors';
+  public photo: string = 'Photo';
+
   constructor() { }
 
   ngOnInit(): void {

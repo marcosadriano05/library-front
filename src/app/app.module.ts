@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { RegisterBookComponent } from './pages/register-book/register-book.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { BookCardComponent } from './components/book-card/book-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterBookComponent,
     DashboardComponent,
-    NavBarComponent
+    NavBarComponent,
+    BookCardComponent
   ],
   imports: [
     BrowserModule,
