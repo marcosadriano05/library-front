@@ -26,7 +26,7 @@ export class RegisterBookComponent implements OnInit {
 
   formSubmit() {
     this.book.authors = this.authors.split(',').map(author => author.trim());
-    this.bookService.postBook(this.book).subscribe(book => console.log('Adicionado'));
+    this.bookService.postBook(this.book).subscribe(book => console.log(book));
   }
 
 }

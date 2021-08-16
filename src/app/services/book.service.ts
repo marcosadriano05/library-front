@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
 
 import { Book } from '../models/book';
 
@@ -18,9 +17,6 @@ export class BookService {
   constructor(private http: HttpClient) { }
 
   postBook(book: Book): Observable<Book> {
-    return this.http.post<Book>(this.bookUrl, book, this.httpOptions)
-      .pipe(
-        tap((newBook: Book) => console.log(newBook))
-      );
+    return this.http.post<Book>(this.bookUrl, book, this.httpOptions);
   }
 }
