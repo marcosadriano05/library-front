@@ -9,6 +9,7 @@ import { RegisterBookComponent } from './pages/register-book/register-book.compo
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { BookCardComponent } from './components/book-card/book-card.component';
+import { BookInfoComponent } from './pages/book-info/book-info.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { BookCardComponent } from './components/book-card/book-card.component';
     RegisterBookComponent,
     DashboardComponent,
     NavBarComponent,
-    BookCardComponent
+    BookCardComponent,
+    BookInfoComponent
   ],
   imports: [
     BrowserModule,

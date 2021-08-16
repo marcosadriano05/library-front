@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 
+import { Book } from '../../models/book';
+
 @Component({
   selector: 'app-book-card',
   templateUrl: './book-card.component.html',
@@ -8,15 +10,11 @@ import { Component, Input } from '@angular/core';
 export class BookCardComponent {
 
   @Input()
-  public title: string = '';
-
-  @Input()
-  public publisher: string = '';
-
-  @Input()
-  public authors: string[] = [];
-
-  @Input()
-  public photo: string = '';
+  public book: Book = {
+    title: '',
+    authors: [],
+    photo: '',
+    publisher: ''
+  };
 
 }
