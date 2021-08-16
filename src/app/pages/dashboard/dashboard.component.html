@@ -1,11 +1,10 @@
 <div class="dashboard">
-  <app-book-card
-    [title]="title"
-    [publisher]="publisher"
-    [authors]="authors"
-    [photo]="photo"
-  ></app-book-card>
-  <app-book-card></app-book-card>
-  <app-book-card></app-book-card>
-  <app-book-card></app-book-card>
+  <div *ngFor="let book of books">
+    <app-book-card
+      [title]="book.title"
+      [publisher]="book.publisher"
+      [authors]="book.authors"
+      [photo]="book.photo"
+    ></app-book-card>
+  </div>
 </div>

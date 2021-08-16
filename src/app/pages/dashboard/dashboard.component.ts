@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import { Book } from 'src/app/models/book';
+import { BookService } from '../../services/book.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,14 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  public title: string = 'LOTR';
-  public publisher: string = 'Publisher';
-  public authors: string = 'Authors';
-  public photo: string = 'Photo';
+  public books: Book[] = [];
 
-  constructor() { }
+  constructor(private bookService: BookService) { }
 
   ngOnInit(): void {
+    this.getBooks();
+  }
+
+  getBooks(): void {
+    this.bookService.getBooks().subscribe(books => this.books = books);
   }
 
 }

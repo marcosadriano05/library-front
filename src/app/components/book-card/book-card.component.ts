@@ -14,7 +14,7 @@ export class BookCardComponent {
   public publisher: string = '';
 
   @Input()
-  public authors: string = '';
+  public authors: string[] = [];
 
   @Input()
   public photo: string = '';
