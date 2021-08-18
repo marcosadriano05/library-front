@@ -11,7 +11,13 @@ import { Book } from '../../models/book';
 })
 export class BookInfoComponent implements OnInit {
 
-  public book?: Book
+  public book: Book = {
+    id: '',
+    authors: [],
+    photo: '',
+    publisher: '',
+    title: ''
+  };
 
   constructor(
     private bookService: BookService,
@@ -25,7 +31,7 @@ export class BookInfoComponent implements OnInit {
   getBook(): void {
     const id: string | null = this.route.snapshot.paramMap.get('id');
     if (id) {
-      this.bookService.getBook(id).subscribe(book => console.log(book));
+      this.bookService.getBook(id).subscribe(book => this.book = book);
     }
   }
 
