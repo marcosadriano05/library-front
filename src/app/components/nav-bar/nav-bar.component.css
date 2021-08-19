@@ -1,0 +1,25 @@
+.nav-component {
+  position: relative;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-and-logo button {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  .menu-and-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .menu-and-logo button {
+    display: block;
+    margin-right: 1rem;
+  }
+}
