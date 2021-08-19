@@ -1,21 +1,15 @@
-<div class="card">
-  <div class="row g-0">
-    <div class="col-4">
-      <img
-        src="{{ book.photo }}"
-        alt="{{ book.title }}"
-        class="img-fluid"
-      />
-    </div>
-    <div class="col-8">
-      <div class="card-body">
-        <h5 class="card-title">{{ book.title }}</h5>
-        <div class="card-text">
-          <p>Publisher: {{ book.publisher }}</p>
-          <p>Authors: {{ book.authors }}</p>
-        </div>
-        <a routerLink="/book/{{ book.id }}">Read more</a>
-      </div>
-    </div>
+<mat-card class="card">
+  <div class="img-container">
+    <img mat-card-image src="{{ book.photo }}" alt="{{ book.title }}">
   </div>
-</div>
+  <mat-card-header>
+    <mat-card-title>{{ book.title }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Publisher: {{ book.publisher }}</p>
+    <p>Authors: {{ book.authors }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-button routerLink="/book/{{ book.id }}">Read more</a>
+  </mat-card-actions>
+</mat-card>
